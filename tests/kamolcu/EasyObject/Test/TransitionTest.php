@@ -5,8 +5,15 @@ use kamolcu\EasyObject\Transition;
 
 class TransitionTest extends \PHPUnit_Framework_TestCase
 {
+    private $trans;
+    public function setUp(){
+        $this->trans = new Transition();
+    }
     public function testCheckTransitionObject() {
-        $trans = new Transition();
-        $this->assertInstanceOf('kamolcu\EasyObject\TransitionInterface', $trans);
+        $this->assertInstanceOf('kamolcu\EasyObject\TransitionInterface', $this->trans);
+    }
+
+    public function testTransitionHasGetName() {
+        $this->assertTrue(method_exists($this->trans, 'getName'));
     }
 }
