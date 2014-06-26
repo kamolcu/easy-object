@@ -16,4 +16,8 @@ class TransitionTest extends \PHPUnit_Framework_TestCase
     public function testTransitionHasGetName() {
         $this->assertTrue(method_exists($this->trans, 'getName'));
     }
+
+    public function testTransitionHasGetBeginStates() {
+        $this->assertTrue(method_exists($this->trans, 'getBeginStates'));
+    }
 }
